@@ -1,0 +1,61 @@
+body{
+    background-color: #2a2d37;
+    font-family: 'Hack', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #84aed9;
+    font-size: 11px;
+}
+.center-me{
+    min-width: 100px;
+    max-width: 800px;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li{
+    display: inline;
+}
+li::after{
+    content: ' // ';
+    color: #94e0db;
+}
+li:last-child::after{
+    content: '';
+}
+td{
+    padding: 15px 0;
+}
+td.title{
+    color: white;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 5px;
+}
+li.title::after{
+    content: '';
+}
+a{
+    color: #84aed9;
+    text-decoration: none;
+    padding: 0 5px;
+}
+a:hover{
+    background-color: #94e0db;
+    color: white;
+}
+input{
+    background-color: transparent;
+    border: solid 0px transparent;
+    color: #94e0db;
+    font-family: 'Hack', sans-serif;
+    font-size: 11px;
+    outline: none;
+}
