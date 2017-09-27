@@ -1,0 +1,28 @@
+{
+  "name": "homepage",
+  "version": "1.0.0",
+  "description": "personal home screen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justijndepover/Homepage.git"
+  },
+  "keywords": [
+    "homescreen",
+    "startscreen",
+    "homepage"
+  ],
+  "author": "justijn depover",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justijndepover/Homepage/issues"
+  },
+  "homepage": "https://github.com/justijndepover/Homepage#readme",
+  "dependencies": {
+    "browserify": "^14.4.0",
+    "jquery": "^3.2.1"
+  }
+}

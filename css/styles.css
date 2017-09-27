@@ -59,3 +59,24 @@ input{
     font-size: 11px;
     outline: none;
 }
+.settings{
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+    right: 0;
+    -webkit-transition: all cubic-bezier(0.48, -0.33, 0.58, 1.56) .15s;
+    -o-transition: all cubic-bezier(0.48, -0.33, 0.58, 1.56) .15s;
+    transition: all cubic-bezier(0.48, -0.33, 0.58, 1.56) .15s;
+}
+.settings>a{
+    background-color: #363944;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+.settings .panel {
+    background-color: #363944;
+    height: 200px;
+    width: 100%;
+}
