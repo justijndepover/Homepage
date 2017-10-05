@@ -75,6 +75,9 @@ input{
     display: inline-block;
     cursor: pointer;
 }
+.settings>a:hover{
+	background-color: #dca4f4;
+}
 .settings .panel {
     background-color: #363944;
     height: 200px;
