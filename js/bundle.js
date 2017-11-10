@@ -1,33 +1,93 @@
 var $ = require('jquery');
 
 $('document').ready(function() {
-    $('[data-toggle-settings]').on('click', function(){
-        var target = $(this).data('toggle-settings');
-        if(target == true){
-            $('.settings').css('bottom', -50);
-            $(this).data('toggle-settings', false);
-        } else {
-            $('.settings').css('bottom', -200);
-            $(this).data('toggle-settings', true);
-        }
-    });
 
-    $('body').keyup( function( event ) {
-        console.log(event.which);
+    $('body').keypress( function( event ) {
+        // console.log(event.which);
+
+        if(event.which == 27) {
+            $('#commandinput').val('').blur();
+        }
+
+        if($('#search').is(':focus') || $('#commandinput').is(':focus')){
+            return;
+        }
 
         switch (event.which) {
-            case 83:
-                // s
-                $('[data-toggle-settings]').click();
-                break;
-
-            case 76:
-                // l
-                $('#search').focus();
+            case 58:
+                // :
+                $('[data-toggle-prompt]').click();
+                $('#commandinput').focus();
                 break;
 
             default:
             break;
+        }
+    });
+
+    $( '#commandinput' ).keyup( function( e ) {
+        if( e.keyCode == 13 )
+        {
+            $( this ).trigger( "enterKey" );
+        }
+    });
+
+    $( '#commandinput' ).bind( "enterKey" ,function( e ){
+        // val contains full command, no split based on spaces
+        var val = $( '#commandinput' ).val();
+        var input = val.split(' ');
+        $( '#commandinput' ).val("").blur();
+
+        switch (input[0]) {
+            case ":r":
+                // reddit baby
+
+                if (typeof input[1] != 'undefined'){
+                    window.location.href = "http://www.reddit.com/r/" + input[1];
+                }
+                window.location.href = "http://www.reddit.com/";
+                break;
+
+            case ":open":
+                var pattern = /^((http|https|ftp):\/\/)/;
+
+                if(!pattern.test(input[1])) {
+                    input[1] = "http://" + input[1];
+                }
+
+                window.location.href = input[1];
+                break;
+
+            case ":g":
+                window.location.href = "http://www.google.com/search?q=" + input[1];
+                break;
+
+            case ":f":
+                window.location.href = "http://www.facebook.com/";
+                break;
+
+            case ":tw":
+                window.location.href = "http://www.twitter.com/";
+                break;
+
+            case ":y":
+                window.location.href = "http://www.youtube.com/";
+                break;
+
+            case ":t":
+                window.location.href = "http://www.theverge.com/";
+                break;
+
+            case ":n":
+                window.location.href = "http://www.netflix.com/";
+                break;
+
+            case ":s":
+                window.location.href = "http://www.soundcloud.com/";
+                break;
+
+            default:
+                break;
         }
     });
 });
