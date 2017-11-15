@@ -59,7 +59,8 @@ $('document').ready(function() {
                 break;
 
             case ":g":
-                window.location.href = "http://www.google.com/search?q=" + input[1];
+				input.splice(0,1);
+                window.location.href = "http://www.google.com/search?q=" + input.join(' ');
                 break;
 
             case ":f":

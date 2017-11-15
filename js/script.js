@@ -60,7 +60,8 @@ $('document').ready(function() {
                 break;
 
             case ":g":
-                window.location.href = "http://www.google.com/search?q=" + input[1];
+				input.splice(0,1);
+                window.location.href = "http://www.google.com/search?q=" + input.join(' ');
                 break;
 
             case ":f":
@@ -92,6 +93,7 @@ $('document').ready(function() {
         }
     });
 });
+
 },{"jquery":2}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.2.1
